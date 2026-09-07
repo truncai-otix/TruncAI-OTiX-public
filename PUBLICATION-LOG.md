@@ -1,6 +1,14 @@
 # D0 Publication and Maintenance Log
 
-This log records authorised public-content maintenance for TruncAI-OTiX. It contains no private data, credentials, operational endpoints, Worker runtime code or security configuration.
+This log records authorised public-content maintenance for TruncAI-OTiX. It contains no private data, credentials, operational endpoints, provider-internal deployment/version identifiers, Worker runtime code or security configuration.
+
+## 2026-09-07 — D0 operational-metadata sanitisation
+
+- **Authority:** C3-PUB-D0 under Prompt Maestro TruncAI-OTiX V2.2.
+- **Purpose:** remove provider-internal deployment/version identifiers from the public log so that public traceability does not expose operational infrastructure identifiers.
+- **Scope:** `PUBLICATION-LOG.md` only; no public claim, website content, DNS, WAF, security, credentials, access or authentication change.
+- **Rollback:** the pre-change public state remains recoverable through Git history; a complete pre-sanitisation copy is preserved in the controlled project archive.
+- **Result:** public Git commit identifiers and public-content hashes remain available as provenance evidence; Cloudflare deployment/version identifiers are withheld from D0.
 
 ## 2026-09-07 — V2.1 D0 public evidence capsule
 
@@ -24,7 +32,7 @@ This log records authorised public-content maintenance for TruncAI-OTiX. It cont
 - **Purpose:** make the existing D0 repository directly discoverable and navigable from the canonical website and machine-readable summary.
 - **Scope:** `README.md`, `site/index.html` and `site/llms.txt`; no technical source, private tests, D2 material or personal identifiers were disclosed.
 - **Repository content commits:** `9cb0eff03df5b9409b92b7a47fea089511d9d27f` and responsive-navigation follow-up `ebf02d00e4ce937f25c8e55aece9558959b1bab0`.
-- **Cloudflare Worker deployment:** `af4996e693654dfb863800ccf2bfabed`.
+- **Cloudflare deployment evidence:** provider-internal deployment identifier withheld from D0; retained in controlled project evidence.
 - **DNS, WAF, security, credentials, access and authentication change:** none.
 
 ### Published D0 hashes
@@ -49,7 +57,7 @@ This log records authorised public-content maintenance for TruncAI-OTiX. It cont
 - **Authority:** C3-PUB-D0 under Prompt Maestro TruncAI-OTiX V2.2.
 - **Purpose:** preserve a versioned public copy of the content already served at https://truncaiotix.com and remove the traceability gap between the live website and the public repository.
 - **Scope:** README update plus `site/index.html`, `site/robots.txt`, `site/sitemap.xml` and `site/llms.txt`.
-- **Source state read:** Cloudflare Worker `truncaiotix-web`, active deployment `d1d3eb77-12b2-4718-ab88-1c36a86a0cd6`, version `c2555c0b-0720-43ad-b10a-66ebb468597d` (version 3).
+- **Source state read:** active Cloudflare deployment/version recorded in controlled project evidence; provider-internal resource name and identifiers withheld from D0.
 - **Repository snapshot commit:** `1037cab056da13a430e99ede84d1bff2325a98b1`.
 - **Repository state before change / rollback:** `f062c76b81611156d33b89ad93a5f80215ae2d78`.
 - **Cloudflare change:** none.
@@ -71,6 +79,6 @@ This log records authorised public-content maintenance for TruncAI-OTiX. It cont
 - Live public hashes match the source asset metadata.
 - `https://www.truncaiotix.com/` resolves to the canonical `https://truncaiotix.com/` content.
 - A non-existent path returns HTTP 404.
-- The active Cloudflare Worker deployment and version remained unchanged after verification.
+- The active Cloudflare deployment and version remained unchanged after verification; provider-internal identifiers are retained only in controlled evidence.
 - Claim boundary remains V2.1: local, synthetic, non-operational, C2 maximum; 113/113 accumulated internal tests; E08 and E10 INCONCLUSIVE.
 - **Evidence limitation:** the snapshot commit created through the connected GitHub API is reported by GitHub as unsigned. Commit IDs, blob IDs, source SHA-256 values and public re-fetch verification provide the recorded integrity evidence; no cryptographic commit-signature claim is made.
