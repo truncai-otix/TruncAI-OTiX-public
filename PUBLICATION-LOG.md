@@ -2,6 +2,20 @@
 
 This log records authorised public-content maintenance for TruncAI-OTiX. It contains no private data, credentials, operational endpoints, provider-internal deployment/version identifiers, Worker runtime code or security configuration.
 
+## 2026-09-07 — D0.2 live deployment verification
+
+- **Authority:** C3-PUB-D0 under Prompt Maestro TruncAI-OTiX V2.2, plus explicit owner authorization for Cloudflare Crawler Hints / IndexNow.
+- **Purpose:** close the production-verification gap for the approved D0.2 AI-discoverability source without expanding claims or disclosure.
+- **Source state:** public repository `main` at `aa607e9308465b1f843636d88aef8af537d654bf`; live publication uses the approved `site/` D0 source.
+- **Live result:** the canonical root plus `what-is-truncai-otix`, `evidence`, `architecture`, `capability-boundary`, `evaluation` and `faq` all return HTTP 200 with self-canonical, indexable pages.
+- **Machine-readable discovery:** `robots.txt`, `sitemap.xml` and `llms.txt` are publicly accessible; the sitemap exposes the seven canonical URLs and the crawler policy preserves search/user-request access while blocking dedicated training/model-improvement tokens where separately addressable.
+- **Crawler notification:** Cloudflare Crawler Hints / IndexNow is active at zone scope and reported applied.
+- **Regression check:** the canonical home remained byte-identical to the previously approved D0 home at verification time; no content regression was detected.
+- **Infrastructure boundary:** no DNS, WAF, security, authentication, access, secret or credential change was made. Provider-internal deployment/version identifiers and rollback identifiers are withheld from D0 and retained only in controlled project evidence.
+- **Google observation immediately after deployment:** the canonical home remained submitted and indexed. The six newly published thematic URLs were still reported as unknown to Google immediately after deployment; this is an indexing-state observation, not a crawlability failure or guarantee of future indexing.
+- **Claim boundary:** unchanged — local, synthetic and non-operational V2.1 baseline; C2 maximum; internal 113/113 regression; 10,000-case synthetic campaign; E08 and E10 INCONCLUSIVE; no external/industrial validation, certification, regulatory conformity or production-readiness claim.
+- **Rollback:** prior live state remains recoverable through provider-controlled version history; exact provider identifiers are retained in controlled evidence and intentionally excluded from this public log.
+
 ## 2026-09-07 — D0.2 AI discoverability source publication
 
 - **Authority:** C3-PUB-D0 under Prompt Maestro TruncAI-OTiX V2.2, plus explicit owner authorization for the proposed AI-discoverability changes and Cloudflare Crawler Hints / IndexNow.
