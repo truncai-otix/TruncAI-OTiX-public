@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://truncaiotix.com/</loc></url>
+  <url><loc>https://truncaiotix.com/</loc><lastmod>2026-09-07</lastmod></url>
+  <url><loc>https://truncaiotix.com/what-is-truncai-otix/</loc><lastmod>2026-09-07</lastmod></url>
+  <url><loc>https://truncaiotix.com/evidence/</loc><lastmod>2026-09-07</lastmod></url>
+  <url><loc>https://truncaiotix.com/architecture/</loc><lastmod>2026-09-07</lastmod></url>
+  <url><loc>https://truncaiotix.com/capability-boundary/</loc><lastmod>2026-09-07</lastmod></url>
+  <url><loc>https://truncaiotix.com/evaluation/</loc><lastmod>2026-09-07</lastmod></url>
+  <url><loc>https://truncaiotix.com/faq/</loc><lastmod>2026-09-07</lastmod></url>
 </urlset>
