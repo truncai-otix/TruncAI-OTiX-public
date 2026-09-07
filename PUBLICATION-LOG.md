@@ -2,6 +2,17 @@
 
 This log records authorised public-content maintenance for TruncAI-OTiX. It contains no private data, credentials, operational endpoints, provider-internal deployment/version identifiers, Worker runtime code or security configuration.
 
+## 2026-09-07 — D0.2 AI discoverability source publication
+
+- **Authority:** C3-PUB-D0 under Prompt Maestro TruncAI-OTiX V2.2, plus explicit owner authorization for the proposed AI-discoverability changes and Cloudflare Crawler Hints / IndexNow.
+- **Purpose:** improve machine discovery, retrieval and citation of the existing D0 public evidence without expanding the technical disclosure or raising material claims.
+- **Scope published to the public repository:** six topic pages under `site/` (`what-is-truncai-otix`, `evidence`, `architecture`, `capability-boundary`, `evaluation`, `faq`), expanded `sitemap.xml`, revised `llms.txt`, selective crawler policy in `robots.txt`, and README discoverability documentation.
+- **Crawler policy:** search and user-request crawlers are permitted; dedicated model-training/model-improvement crawlers are blocked where a distinct robots token exists. The policy separates public search/citation from model-training permission.
+- **Claim boundary:** unchanged — V2.1 remains local, synthetic and non-operational; C2 maximum; 113/113 accumulated internal tests; 10,000-case campaign synthetic; continuity and real human-review evidence INCONCLUSIVE; no external/industrial validation, certification, regulatory conformity or production-readiness claim.
+- **Disclosure boundary:** unchanged D0. No controlled source, schemas, fixtures, datasets, SBOM, credentials, security configuration, provider-internal deployment identifiers, personal/legal-entity identity or transaction/IP strategy material was added.
+- **Production note:** repository publication records the approved source state. Live Cloudflare publication, Crawler Hints/IndexNow activation and search-engine registration require the corresponding connected provider actions and must be separately verified after execution.
+- **Rollback:** all changes are additive or normal Git content updates on `main`; prior states remain recoverable through repository history. No history rewrite was used.
+
 ## 2026-09-07 — D0 operational-metadata sanitisation
 
 - **Authority:** C3-PUB-D0 under Prompt Maestro TruncAI-OTiX V2.2.
