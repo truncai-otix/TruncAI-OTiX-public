@@ -26,10 +26,19 @@ This capsule provides a compact, non-confidential map of what a public reviewer 
 | Item | Public artifact | What can be checked |
 |---|---|---|
 | Project overview | [truncaiotix.com](https://truncaiotix.com/) | Public positioning, capability boundary, limitations and contact route. |
+| Canonical project definition | [What is TruncAI-OTiX?](https://truncaiotix.com/what-is-truncai-otix/) | Concise V2.1 definition, scope and current limitations. |
+| Evidence page | [Evidence](https://truncaiotix.com/evidence/) | Evidence classes, internal-result qualifications and non-claims. |
+| Architecture page | [Architecture](https://truncaiotix.com/architecture/) | High-level public component and trust-boundary view. |
+| Capability page | [Capability boundary](https://truncaiotix.com/capability-boundary/) | C0-C2 permitted scope and C3-C4 prohibition wording. |
+| Evaluation page | [Evaluation](https://truncaiotix.com/evaluation/) | Progressive review path and unresolved external-validation gaps. |
+| FAQ | [FAQ](https://truncaiotix.com/faq/) | Retrieval-friendly bounded answers to common evaluator questions. |
 | Machine-readable overview | [llms.txt](https://truncaiotix.com/llms.txt) | Compact project description and public discovery links. |
+| Sitemap | [sitemap.xml](https://truncaiotix.com/sitemap.xml) | Canonical D0 discovery map. |
 | Official public repository | [TruncAI-OTiX-public](https://github.com/truncai-otix/TruncAI-OTiX-public) | D0 materials, repository history and public provenance. |
 | Publication history | [PUBLICATION-LOG.md](PUBLICATION-LOG.md) | Dated record of public-surface updates. |
 | Capsule integrity | [CHECKSUMS.sha256](CHECKSUMS.sha256) | SHA-256 digests for the published capsule files. |
+
+Availability of a canonical page is distinct from search-engine indexing or product-specific AI retrieval. No indexing or citation outcome is claimed until observed.
 
 The capsule is based on public repository commit `e53487d276e0e56a1288a6af85a397450a494cf6`. That identifier anchors the public starting point; it does not attest to controlled internal materials.
 
