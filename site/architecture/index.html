@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TruncAI-OTiX Architecture — Evidence, Governance and Assurance</title>
+<meta name="description" content="High-level public architecture of TruncAI-OTiX V2.1: Evidence Spine, Agent Governance, Assurance Lab and Baseline Closure.">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<link rel="canonical" href="https://truncaiotix.com/architecture/">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable project summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"TruncAI-OTiX Architecture","url":"https://truncaiotix.com/architecture/","isPartOf":{"@type":"WebSite","name":"TruncAI-OTiX","url":"https://truncaiotix.com/"}}</script>
+<style>body{margin:0;background:#07101d;color:#f4f7fb;font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif}main,nav,footer{width:min(960px,calc(100% - 36px));margin:auto}nav{padding:24px 0;display:flex;gap:18px;flex-wrap:wrap}a{color:#86e8dc}h1{font-size:clamp(2.4rem,7vw,4.6rem);line-height:1.02;margin:.8em 0 .3em}h2{margin-top:2em}.lead,.muted{color:#c3cee0}.box,.flow{border:1px solid #26374e;border-radius:16px;padding:20px;margin:20px 0;background:#0d1a2d}.flow{text-align:center;font-weight:700}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}.card{border:1px solid #26374e;border-radius:16px;padding:18px;background:#0d1a2d}.card p{color:#aebbd0}footer{padding:48px 0;color:#aebbd0}</style>
+</head>
+<body>
+<nav><a href="/">TruncAI-OTiX</a><a href="/what-is-truncai-otix/">Overview</a><a href="/evidence/">Evidence</a><a href="/capability-boundary/">Capability boundary</a><a href="/evaluation/">Evaluation</a><a href="/faq/">FAQ</a></nav>
+<main>
+<p class="muted">D0 high-level architecture · Baseline V2.1</p>
+<h1>How is TruncAI-OTiX structured?</h1>
+<p class="lead">The public architecture describes evidence flow and authority boundaries without exposing source code, exact schemas, security rules, test fixtures or proprietary implementation detail.</p>
+<div class="flow">Context or synthetic input → Evidence Spine → Agent Governance → C0–C2 advisory output → Human decision outside runtime<br><br>Assurance Lab and Baseline Closure exercise and check the governed evidence path. C3–C4 are denied in the tested V2.1 object.</div>
+<h2>Four high-level components</h2>
+<div class="grid"><div class="card"><h3>Evidence Spine</h3><p>Maintains versioned, integrity-linked records supporting traceability and replay within the tested scope.</p></div><div class="card"><h3>Agent Governance</h3><p>Applies constraints around identity, human ownership, purpose, tools, privilege, validity, budget, revocation and escalation.</p></div><div class="card"><h3>Assurance Lab</h3><p>Exercises deterministic synthetic scenarios, including negative testing and a virtual-case campaign.</p></div><div class="card"><h3>Baseline Closure</h3><p>Checks that the declared baseline closes consistently and fails closed against silent authority or claim expansion.</p></div></div>
+<h2>Authority boundary</h2>
+<p>V2.1 permits C0 observation, C1 analysis and C2 recommendation within the tested scope. C2 is the maximum permitted authority. C3 preparation/issuance and C4 execution/control are prohibited in the evaluated object.</p>
+<h2>Trust and operational boundary</h2>
+<ul><li>Local, synthetic and non-operational environment.</li><li>No operational protocol integration in the evaluated object.</li><li>Real operational data is outside the V2.1 baseline.</li><li>Human decisions occur outside the advisory runtime.</li><li>Continuity and real human-review evidence remain INCONCLUSIVE.</li></ul>
+<div class="box"><strong>Important limitation:</strong> the C2 ceiling is a scoped internal design and test statement. It is not a claim that every future integration, deployment or modification will preserve the same boundary.</div>
+<h2>What this architecture does not prove</h2>
+<p>It does not independently demonstrate execution, security, regulatory conformity, industrial suitability, continuous availability or effective human supervision. Those outcomes require additional evidence and, where applicable, external validation.</p>
+<p>See the canonical <a href="https://github.com/truncai-otix/TruncAI-OTiX-public/blob/main/PUBLIC-ARCHITECTURE.md">public architecture artifact</a> for the versioned D0 source.</p>
+</main>
+<footer>© 2026 TruncAI-OTiX · Public D0 material · <a href="mailto:contact@truncaiotix.com">contact@truncaiotix.com</a></footer>
+</body></html>
