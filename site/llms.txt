@@ -3,15 +3,24 @@
 > Public D0 overview of an internally executable, local, synthetic and non-operational technical reference for bounded, human-reviewed AI decision support, traceability and controlled technical evaluation.
 
 Canonical website: https://truncaiotix.com/
+Official public repository: https://github.com/truncai-otix/TruncAI-OTiX-public
 Language: English
 Contact: contact@truncaiotix.com
 
 ## Public access
 
 - The canonical website and this summary are public D0 material.
+- The official public repository contains the approved D0 website snapshot, README and publication log: https://github.com/truncai-otix/TruncAI-OTiX-public
 - They require no authentication, cookies or client-side JavaScript to retrieve their textual content.
 - Automated readers are allowed by robots.txt.
 - Technical source and evaluation artefacts are not public; approved evaluators may receive a scoped D2 package under explicit authorisation and appropriate confidentiality terms.
+
+## Public verification links
+
+- Repository: https://github.com/truncai-otix/TruncAI-OTiX-public
+- Public disclosure README: https://github.com/truncai-otix/TruncAI-OTiX-public/blob/main/README.md
+- D0 publication log: https://github.com/truncai-otix/TruncAI-OTiX-public/blob/main/PUBLICATION-LOG.md
+- Versioned website snapshot: https://github.com/truncai-otix/TruncAI-OTiX-public/tree/main/site
 
 ## Current baseline
 
