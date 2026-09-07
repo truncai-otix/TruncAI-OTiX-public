@@ -2,6 +2,32 @@
 
 This log records authorised public-content maintenance for TruncAI-OTiX. It contains no private data, credentials, operational endpoints, Worker runtime code or security configuration.
 
+## 2026-09-07 — Official public repository discoverability
+
+- **Authority:** C3-PUB-D0 under Prompt Maestro TruncAI-OTiX V2.2.
+- **Purpose:** make the existing D0 repository directly discoverable and navigable from the canonical website and machine-readable summary.
+- **Scope:** `README.md`, `site/index.html` and `site/llms.txt`; no technical source, private tests, D2 material or personal identifiers were disclosed.
+- **Repository content commits:** `9cb0eff03df5b9409b92b7a47fea089511d9d27f` and responsive-navigation follow-up `ebf02d00e4ce937f25c8e55aece9558959b1bab0`.
+- **Cloudflare Worker deployment:** `af4996e693654dfb863800ccf2bfabed`.
+- **DNS, WAF, security, credentials, access and authentication change:** none.
+
+### Published D0 hashes
+
+| Public path | Bytes | SHA-256 | HTTP result |
+|---|---:|---|---|
+| `/` | 47,345 | `c20ae6b7266a525107002baa1f2404e1a2532e5ccea765656e185fcff71b941a` | 200 |
+| `/llms.txt` | 3,912 | `0c2e669622ad7893813bac71e37f05486c278078f68ae4d6a0bd8d27ddc1af13` | 200 |
+
+### Result
+
+- The website exposes the official repository in navigation, hero, D0 disclosure, contact and footer areas.
+- The HTML declares the relationship through `rel="me"` and Schema.org `sameAs`; the HTTP `Link` response header also exposes the repository relationship.
+- `llms.txt` includes direct links to the repository, README, publication log and versioned website snapshot.
+- The repository README links back to the canonical website and states that the repository is D0 public disclosure, not the controlled technical source or external validation.
+- Browser, Claude, OpenAI, Bing/Copilot and Perplexity user-agent checks returned the same HTML bytes and SHA-256 value.
+- `HEAD` returned 200 without a response body, an unknown path returned 404, and `www` resolved to the canonical apex URL.
+- **Evidence limitation:** public search-engine indexing is not immediate and remains outside direct project control. The public repository does not independently reproduce the 113/113 internal test claim because technical source and evaluation artefacts remain D2 controlled.
+
 ## 2026-09-07 — Public website snapshot versioning
 
 - **Authority:** C3-PUB-D0 under Prompt Maestro TruncAI-OTiX V2.2.
