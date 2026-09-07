@@ -338,9 +338,7 @@
       .steps{grid-template-columns:repeat(2,1fr)}
       .contact-side{text-align:left}
     }
-    @media(max-width:720px){
-      .wrap{width:min(calc(100% - 26px),var(--max))}
-      .hero{padding-top:62px}
+    @media(max-width:1080px){
       .navlinks{
         display:none;position:absolute;top:65px;left:13px;right:13px;flex-direction:column;align-items:stretch;
         background:#091524;border:1px solid var(--line);border-radius:18px;padding:13px;box-shadow:var(--shadow)
@@ -348,6 +346,10 @@
       .navlinks.open{display:flex}
       .navlinks a{padding:9px 8px}
       .menu-btn{display:block}
+    }
+    @media(max-width:720px){
+      .wrap{width:min(calc(100% - 26px),var(--max))}
+      .hero{padding-top:62px}
       .grid-4,.grid-3,.grid-2,.boundary,.steps{grid-template-columns:1fr}
       .boundary .cap:last-child{grid-column:auto}
       h1{font-size:clamp(3rem,16vw,5.4rem)}
