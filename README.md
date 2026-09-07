@@ -113,14 +113,22 @@ The intended progression is:
 
 A qualified third party may evaluate the defined asset for possible integration, licensing or acquisition. External validation, integration, operation, safety, regulatory assessment and sector-specific validation remain outside the current internal baseline.
 
-## Public website snapshot
+## Public website snapshot and AI discoverability
 
-The `site/` directory contains a versioned copy of the content already served at the canonical public website:
+The `site/` directory contains the approved D0 public website sources and a discoverability-oriented set of topic pages:
 
-- `index.html`;
-- `robots.txt`;
-- `sitemap.xml`;
-- `llms.txt`.
+- `index.html` — canonical landing page;
+- `what-is-truncai-otix/index.html` — concise project definition and scope;
+- `evidence/index.html` — evidence classes, internal results and limitations;
+- `architecture/index.html` — high-level architecture;
+- `capability-boundary/index.html` — C0–C4 authority boundary;
+- `evaluation/index.html` — evaluation path and current gaps;
+- `faq/index.html` — retrieval-friendly bounded answers;
+- `robots.txt` — search-crawler access policy;
+- `sitemap.xml` — canonical discovery map;
+- `llms.txt` — machine-readable project overview and public links.
+
+Search and user-request crawlers are intentionally allowed. Dedicated model-training or model-improvement crawlers are blocked where a distinct robots token exists. This policy is intended to improve public discovery and citation without expanding the D0 disclosure boundary.
 
 This snapshot is maintained for public traceability and rollback. The canonical live URL remains https://truncaiotix.com. Worker runtime, routing and security configuration are intentionally excluded from this D0 repository.
 
