@@ -97,6 +97,17 @@ The intended progression is:
 
 A qualified third party may evaluate the defined asset for possible integration, licensing or acquisition. External validation, integration, operation, safety, regulatory assessment and sector-specific validation remain outside the current internal baseline.
 
+## Public website snapshot
+
+The `site/` directory contains a versioned copy of the content already served at the canonical public website:
+
+- `index.html`;
+- `robots.txt`;
+- `sitemap.xml`;
+- `llms.txt`.
+
+This snapshot is maintained for public traceability and rollback. The canonical live URL remains https://truncaiotix.com. Worker runtime, routing and security configuration are intentionally excluded from this D0 repository.
+
 ## Contact
 
 **contact@truncaiotix.com**

@@ -1,0 +1,905 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#08111f">
+  <title>TruncAI-OTiX — Governed AI Decision Support</title>
+  <meta name="description" content="Internally executable, local and non-operational baseline for bounded, human-reviewed AI decision support, traceability and controlled technical evaluation.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://truncaiotix.com/">
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable project summary">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TruncAI-OTiX">
+  <meta property="og:title" content="TruncAI-OTiX — Governed AI Decision Support">
+  <meta property="og:description" content="A bounded, internally executable reference for human-reviewed AI decision support, traceability and controlled technical evaluation.">
+  <meta property="og:url" content="https://truncaiotix.com/">
+  <meta name="twitter:card" content="summary">
+  <style>
+    :root{
+      --bg:#07101d;
+      --bg-2:#0b1626;
+      --panel:#0d1a2d;
+      --panel-2:#101f35;
+      --text:#f4f7fb;
+      --muted:#aebbd0;
+      --line:rgba(255,255,255,.11);
+      --line-strong:rgba(255,255,255,.20);
+      --accent:#64e3d4;
+      --accent-2:#78a8ff;
+      --warn:#ffc66d;
+      --bad:#ff8f9a;
+      --ok:#88e7b7;
+      --shadow:0 20px 70px rgba(0,0,0,.35);
+      --radius:22px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 70% 7%, rgba(100,227,212,.09), transparent 24rem),
+        radial-gradient(circle at 12% 25%, rgba(120,168,255,.10), transparent 28rem),
+        linear-gradient(180deg,var(--bg),#081322 48%,#07101d);
+      color:var(--text);
+      line-height:1.55;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit}
+    .wrap{width:min(calc(100% - 36px),var(--max));margin-inline:auto}
+    .skip{
+      position:absolute;left:-9999px;top:auto;
+    }
+    .skip:focus{
+      left:18px;top:12px;z-index:999;background:#fff;color:#000;padding:10px 14px;border-radius:10px
+    }
+    header{
+      position:sticky;top:0;z-index:40;
+      background:rgba(7,16,29,.78);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
+    }
+    nav{
+      min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px;
+    }
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:800;letter-spacing:.01em}
+    .brand-mark{
+      width:38px;height:38px;border:1px solid var(--line-strong);border-radius:12px;
+      display:grid;place-items:center;background:linear-gradient(145deg,rgba(100,227,212,.12),rgba(120,168,255,.08));
+      box-shadow:inset 0 0 24px rgba(100,227,212,.04)
+    }
+    .brand-mark svg{width:24px;height:24px}
+    .navlinks{display:flex;align-items:center;gap:22px;font-size:.92rem;color:var(--muted)}
+    .navlinks a{text-decoration:none}
+    .navlinks a:hover{color:var(--text)}
+    .nav-cta{
+      border:1px solid var(--line-strong);padding:9px 13px;border-radius:999px;color:var(--text)!important
+    }
+    .menu-btn{
+      display:none;border:1px solid var(--line);background:transparent;color:var(--text);
+      width:42px;height:42px;border-radius:12px;font-size:20px
+    }
+
+    .hero{padding:88px 0 54px}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+    .eyebrow{
+      display:inline-flex;gap:9px;align-items:center;border:1px solid var(--line);
+      background:rgba(255,255,255,.025);padding:7px 11px;border-radius:999px;
+      color:var(--muted);font-size:.82rem;font-weight:650;letter-spacing:.025em
+    }
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 18px var(--accent)}
+    h1{
+      margin:20px 0 18px;
+      font-size:clamp(3.4rem,8vw,7.2rem);
+      line-height:.89;letter-spacing:-.065em;
+      max-width:900px
+    }
+    .gradient-text{
+      background:linear-gradient(110deg,var(--text) 15%,#bfe8ff 52%,#9af3e7 86%);
+      -webkit-background-clip:text;background-clip:text;color:transparent
+    }
+    .lead{
+      max-width:760px;color:#c3cee0;font-size:clamp(1.14rem,2vw,1.42rem);line-height:1.55
+    }
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;
+      min-height:48px;padding:0 18px;border-radius:14px;text-decoration:none;font-weight:750;
+      border:1px solid var(--line-strong);transition:.2s transform,.2s border-color,.2s background
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:var(--text);color:#06101d;border-color:var(--text)}
+    .btn-secondary{background:rgba(255,255,255,.03)}
+    .status-row{display:flex;gap:9px;flex-wrap:wrap;margin-top:28px}
+    .status-chip{
+      border:1px solid var(--line);color:var(--muted);font-size:.78rem;font-weight:680;
+      padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.018)
+    }
+
+    .geometry-card{
+      position:relative;min-height:490px;border:1px solid var(--line);
+      border-radius:32px;background:
+        linear-gradient(160deg,rgba(255,255,255,.035),rgba(255,255,255,.008));
+      box-shadow:var(--shadow);overflow:hidden
+    }
+    .geometry-card::before{
+      content:"";position:absolute;inset:0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+      background-size:34px 34px;
+      mask-image:linear-gradient(to bottom,#000,transparent 82%)
+    }
+    #otCanvas{position:absolute;inset:0;width:100%;height:100%}
+    .geometry-label{
+      position:absolute;left:22px;right:22px;bottom:20px;
+      padding:14px 15px;border:1px solid var(--line);border-radius:16px;
+      background:rgba(7,16,29,.72);backdrop-filter:blur(10px);
+      color:var(--muted);font-size:.78rem
+    }
+    .geometry-label strong{display:block;color:var(--text);font-size:.88rem;margin-bottom:3px}
+
+    section{padding:76px 0}
+    .section-kicker{
+      color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:.74rem
+    }
+    h2{font-size:clamp(2.15rem,4vw,4rem);line-height:1.05;letter-spacing:-.045em;margin:12px 0 18px}
+    .section-intro{max-width:780px;color:var(--muted);font-size:1.08rem}
+    .grid{display:grid;gap:18px}
+    .grid-4{grid-template-columns:repeat(4,1fr)}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+    .card{
+      border:1px solid var(--line);background:linear-gradient(155deg,rgba(255,255,255,.035),rgba(255,255,255,.012));
+      border-radius:var(--radius);padding:24px;box-shadow:0 12px 36px rgba(0,0,0,.12)
+    }
+    .card h3{margin:6px 0 9px;font-size:1.08rem}
+    .card p{margin:0;color:var(--muted)}
+    .card .num{font-size:2.6rem;letter-spacing:-.06em;font-weight:850;line-height:1}
+    .card .mini{margin-top:9px;font-size:.78rem;color:var(--muted)}
+    .icon{
+      width:42px;height:42px;border:1px solid var(--line);border-radius:13px;
+      display:grid;place-items:center;margin-bottom:14px;color:var(--accent);font-weight:900
+    }
+
+    .boundary{margin-top:30px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+    .cap{
+      border:1px solid var(--line);border-radius:18px;padding:18px 16px;min-height:178px;
+      display:flex;flex-direction:column;justify-content:space-between
+    }
+    .cap.allowed{background:linear-gradient(160deg,rgba(100,227,212,.07),rgba(255,255,255,.015))}
+    .cap.prohibited{background:linear-gradient(160deg,rgba(255,143,154,.06),rgba(255,255,255,.012))}
+    .cap-code{font-size:2rem;font-weight:900;letter-spacing:-.05em}
+    .cap-name{font-weight:850;margin:5px 0}
+    .cap-copy{color:var(--muted);font-size:.84rem}
+    .tag{font-size:.69rem;font-weight:850;letter-spacing:.08em;text-transform:uppercase}
+    .allowed .tag{color:var(--ok)}
+    .prohibited .tag{color:var(--bad)}
+
+    .flow{
+      margin-top:34px;border:1px solid var(--line);border-radius:24px;padding:24px;
+      display:grid;grid-template-columns:repeat(7,1fr);gap:8px;align-items:center
+    }
+    .flow-node{
+      border:1px solid var(--line);border-radius:14px;padding:14px 10px;text-align:center;
+      color:#dce5f3;font-weight:700;font-size:.82rem;background:rgba(255,255,255,.02)
+    }
+    .flow-arrow{text-align:center;color:var(--accent);font-weight:900}
+    .note{
+      margin-top:18px;border-left:2px solid var(--accent);padding:8px 0 8px 16px;
+      color:var(--muted);font-size:.9rem
+    }
+
+    .value-grid{margin-top:30px}
+    .value-card{min-height:180px}
+    .value-card h3{font-size:1.16rem}
+    .value-card .tagline{color:var(--text);font-weight:780;margin-bottom:9px}
+
+    .verification{margin-top:34px}
+    .verification h3{font-size:1.35rem;margin:0 0 8px}
+    .table-wrap{margin-top:18px;overflow-x:auto;border:1px solid var(--line);border-radius:18px}
+    table{width:100%;border-collapse:collapse;min-width:720px;background:rgba(255,255,255,.012)}
+    th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+    th{color:var(--text);font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;background:rgba(255,255,255,.035)}
+    td{color:var(--muted);font-size:.88rem}
+    td strong{color:var(--text)}
+    tbody tr:last-child td{border-bottom:0}
+    .result-internal{color:var(--ok);font-weight:820}
+
+    .disclosure-grid{margin-top:30px}
+    .disclosure-grid ul{margin:14px 0 0;padding-left:19px;color:var(--muted)}
+    .disclosure-grid li+li{margin-top:7px}
+    .level{display:inline-flex;padding:5px 8px;border-radius:999px;border:1px solid var(--line);font-size:.68rem;font-weight:850;letter-spacing:.08em;color:var(--accent)}
+
+    .metrics{margin-top:30px}
+    .metric-card{
+      min-height:170px;display:flex;flex-direction:column;justify-content:flex-end;
+      position:relative;overflow:hidden
+    }
+    .metric-card::after{
+      content:"";position:absolute;width:130px;height:130px;border-radius:50%;
+      background:rgba(100,227,212,.05);right:-44px;top:-50px
+    }
+    .metric-label{font-weight:780;margin-top:8px}
+    .metric-copy{color:var(--muted);font-size:.8rem;margin-top:5px}
+    .disclaimer{
+      margin-top:18px;border:1px solid rgba(255,198,109,.25);
+      background:rgba(255,198,109,.055);padding:15px 17px;border-radius:15px;color:#d9c7a7;font-size:.86rem
+    }
+
+    .energy{
+      display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;align-items:stretch;margin-top:30px
+    }
+    .energy-visual{
+      min-height:310px;border:1px solid var(--line);border-radius:var(--radius);padding:24px;
+      background:
+        radial-gradient(circle at 70% 30%,rgba(120,168,255,.13),transparent 18rem),
+        linear-gradient(160deg,rgba(255,255,255,.035),rgba(255,255,255,.01));
+      display:flex;flex-direction:column;justify-content:space-between
+    }
+    .energy-lines{display:grid;gap:12px}
+    .energy-line{display:flex;align-items:center;gap:12px;color:var(--muted)}
+    .pulse{width:9px;height:9px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 14px rgba(120,168,255,.7)}
+    .big-claim{font-size:clamp(1.9rem,4vw,3.5rem);line-height:1.06;letter-spacing:-.045em;font-weight:860}
+    .checks{display:grid;gap:11px;margin-top:18px}
+    .check{display:flex;gap:11px;color:var(--muted)}
+    .check b{color:var(--text)}
+    .checkmark{color:var(--accent);font-weight:900}
+    .xmark{color:var(--bad);font-weight:900}
+
+    .steps{counter-reset:step;display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:30px}
+    .step{
+      counter-increment:step;border-top:1px solid var(--line-strong);padding:18px 14px 8px 0
+    }
+    .step::before{
+      content:"0" counter(step);display:block;color:var(--accent);font-size:.73rem;font-weight:850;
+      letter-spacing:.12em;margin-bottom:9px
+    }
+    .step h3{margin:0 0 7px;font-size:1rem}
+    .step p{margin:0;color:var(--muted);font-size:.83rem}
+
+    .limits{
+      display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px
+    }
+    .limit-list{display:grid;gap:10px}
+    .limit-item{
+      border:1px solid var(--line);border-radius:14px;padding:13px 14px;color:var(--muted);
+      background:rgba(255,255,255,.018)
+    }
+    .limit-item strong{color:var(--text)}
+    .inconclusive{
+      border-color:rgba(255,198,109,.3);background:rgba(255,198,109,.04)
+    }
+
+    .regulatory{
+      margin-top:30px;border:1px solid var(--line);border-radius:var(--radius);padding:26px;
+      background:linear-gradient(155deg,rgba(120,168,255,.07),rgba(255,255,255,.012))
+    }
+    .regulatory h3{margin:0 0 10px;font-size:1.2rem}
+    .regulatory p{margin:0;color:var(--muted)}
+
+    .faq{display:grid;gap:10px;margin-top:30px}
+    .faq details{border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.018);padding:0 16px}
+    .faq summary{cursor:pointer;list-style:none;padding:16px 32px 16px 0;font-weight:780;position:relative}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary::after{content:"+";position:absolute;right:0;top:14px;color:var(--accent);font-size:1.25rem}
+    .faq details[open] summary::after{content:"−"}
+    .faq details p{margin:0;padding:0 0 17px;color:var(--muted)}
+
+    .contact{
+      border:1px solid var(--line);border-radius:30px;padding:44px;
+      background:
+        radial-gradient(circle at 88% 18%,rgba(100,227,212,.11),transparent 20rem),
+        linear-gradient(150deg,rgba(255,255,255,.04),rgba(255,255,255,.012));
+      display:grid;grid-template-columns:1.2fr .8fr;gap:34px;align-items:end
+    }
+    .contact h2{margin-top:0}
+    .contact p{color:var(--muted);max-width:680px}
+    .contact-side{text-align:right}
+    .contact-email{font-size:clamp(1.2rem,2.4vw,1.8rem);font-weight:820;letter-spacing:-.025em}
+    .contact-email a{text-decoration:none;border-bottom:1px solid var(--line-strong)}
+
+    footer{padding:34px 0 50px;border-top:1px solid var(--line);color:var(--muted);font-size:.78rem}
+    .footer-grid{display:flex;justify-content:space-between;gap:30px;align-items:flex-start}
+    .footer-copy{max-width:850px}
+    .footer-copy strong{color:var(--text)}
+    .small{font-size:.75rem;color:var(--muted)}
+
+    .reveal{opacity:0;transform:translateY(10px);transition:.6s opacity,.6s transform}
+    .reveal.visible{opacity:1;transform:none}
+
+    @media(max-width:980px){
+      .hero-grid,.energy,.contact,.limits{grid-template-columns:1fr}
+      .geometry-card{min-height:430px}
+      .grid-4{grid-template-columns:repeat(2,1fr)}
+      .grid-3{grid-template-columns:1fr 1fr}
+      .boundary{grid-template-columns:repeat(2,1fr)}
+      .boundary .cap:last-child{grid-column:span 2}
+      .flow{grid-template-columns:1fr}
+      .flow-arrow{transform:rotate(90deg)}
+      .steps{grid-template-columns:repeat(2,1fr)}
+      .contact-side{text-align:left}
+    }
+    @media(max-width:720px){
+      .wrap{width:min(calc(100% - 26px),var(--max))}
+      .hero{padding-top:62px}
+      .navlinks{
+        display:none;position:absolute;top:65px;left:13px;right:13px;flex-direction:column;align-items:stretch;
+        background:#091524;border:1px solid var(--line);border-radius:18px;padding:13px;box-shadow:var(--shadow)
+      }
+      .navlinks.open{display:flex}
+      .navlinks a{padding:9px 8px}
+      .menu-btn{display:block}
+      .grid-4,.grid-3,.grid-2,.boundary,.steps{grid-template-columns:1fr}
+      .boundary .cap:last-child{grid-column:auto}
+      h1{font-size:clamp(3rem,16vw,5.4rem)}
+      .geometry-card{min-height:380px}
+      section{padding:60px 0}
+      .contact{padding:28px 22px}
+      .footer-grid{flex-direction:column}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      .reveal{opacity:1;transform:none;transition:none}
+      .btn{transition:none}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header>
+    <div class="wrap">
+      <nav aria-label="Primary">
+        <a class="brand" href="#top" aria-label="TruncAI-OTiX home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 2.7 18.7 6.6 19.8 14.2 14 20.1 6.4 18.2 3.7 10.9 7.6 4.4Z" stroke="currentColor" opacity=".9"/>
+              <path d="M7.6 4.4 12 9.1 18.7 6.6M12 9.1 19.8 14.2M12 9.1 6.4 18.2M3.7 10.9 12 9.1M14 20.1 12 9.1" stroke="currentColor" opacity=".5"/>
+            </svg>
+          </span>
+          TruncAI-OTiX
+        </a>
+
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navlinks" aria-label="Toggle navigation">☰</button>
+
+        <div class="navlinks" id="navlinks">
+          <a href="#approach">Approach</a>
+          <a href="#boundary">Boundary</a>
+          <a href="#evidence">Evidence</a>
+          <a href="#energy">Demonstrator</a>
+          <a href="#evaluation">Evaluation</a>
+          <a href="#limits">Limits</a>
+          <a class="nav-cta" href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> V2.1 · Internal transferable baseline with limitations</div>
+          <h1 class="gradient-text">Govern AI decisions.<br>Preserve the evidence.</h1>
+          <p class="lead">
+            When AI recommendations inform consequential workflows, the output alone may not be enough: sources, policy,
+            limits, human intervention and outcomes may need to be reconstructible. TruncAI-OTiX is an internally executable
+            technical reference designed to keep that process consultative, bounded and reviewable.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#approach">Explore the approach <span aria-hidden="true">→</span></a>
+            <a class="btn btn-secondary" href="mailto:contact@truncaiotix.com?subject=TruncAI-OTiX%20controlled%20evaluation&amp;body=Organisation%3A%0ARole%3A%0AEvaluation%20purpose%3A%0AKey%20questions%3A%0ARequested%20scope%3A">Request a controlled evaluation</a>
+          </div>
+          <div class="status-row" aria-label="Current scope">
+            <span class="status-chip">Local</span>
+            <span class="status-chip">Synthetic</span>
+            <span class="status-chip">Non-operational</span>
+            <span class="status-chip">C2 ceiling</span>
+            <span class="status-chip">External validation pending</span>
+          </div>
+        </div>
+
+        <div class="geometry-card" aria-label="Animated wireframe of a truncated octahedron">
+          <canvas id="otCanvas" role="img" aria-label="Truncated octahedron wireframe with 24 vertices and 36 edges"></canvas>
+          <div class="geometry-label">
+            <strong>Truncated octahedron · visual identity</strong>
+            Historic project geometry rendered as the exact 24-vertex / 36-edge wireframe. It is an identity and provenance element,
+            not a claim that V2.1 implements a complete geometric runtime.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="approach">
+      <div class="wrap">
+        <div class="section-kicker">What it is</div>
+        <h2>AI decision support should be governable — not just convincing.</h2>
+        <p class="section-intro">
+          TruncAI-OTiX V2.1 provides a local, synthetic and non-operational reference for capturing, governing,
+          verifying and reproducing trajectories of consultative AI. The emphasis is on evidence, reproducibility,
+          traceability, explicit limits and fail-closed behavior.
+        </p>
+
+        <div class="grid grid-2 value-grid">
+          <article class="card value-card reveal">
+            <div class="level">EVALUATION PROBLEM</div>
+            <h3>Outputs do not explain the full decision path.</h3>
+            <p class="tagline">Reviewers may need more than a persuasive recommendation.</p>
+            <p>A useful evaluation can require reconstruction of the sources, applicable policy, operating limits, human intervention and resulting outcome.</p>
+          </article>
+          <article class="card value-card reveal">
+            <div class="level">DESIGN PROPOSITION</div>
+            <h3>Keep authority, evidence and verification in one bounded pattern.</h3>
+            <p class="tagline">The baseline connects a C0–C2 ceiling with structured evidence and controlled review.</p>
+            <p>Fail-closed policy, replayable records and a progressive evaluation path are combined in one internally executable reference.</p>
+          </article>
+        </div>
+
+        <div class="grid grid-4" style="margin-top:30px">
+          <article class="card reveal">
+            <div class="icon">01</div>
+            <h3>Evidence Spine</h3>
+            <p>Versioned contracts, deterministic canonicalisation, SHA-256 records, append-only linked events, replay, manifests and integrity checks.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon">02</div>
+            <h3>Agent Governance</h3>
+            <p>Identity, human ownership, minimum-privilege delegation, purpose/tool binding, validity, budgets, revocation and HITL escalation.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon">03</div>
+            <h3>Assurance Lab</h3>
+            <p>A synthetic runtime for deterministic evaluation campaigns, negative testing, payload/finding tamper detection and replay.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon">04</div>
+            <h3>Baseline Closure</h3>
+            <p>Machine-readable closure with fail-closed validation intended to reject silent expansion of authority, validation scope or claims.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="boundary">
+      <div class="wrap">
+        <div class="section-kicker">Capability boundary</div>
+        <h2>Observe → Analyse → Recommend → Human decision</h2>
+        <p class="section-intro">
+          The current baseline deliberately caps authority at C2. It is designed so that consultative AI does not become an operational action path.
+        </p>
+
+        <div class="boundary">
+          <article class="cap allowed reveal">
+            <div>
+              <div class="cap-code">C0</div>
+              <div class="cap-name">OBSERVE</div>
+              <div class="cap-copy">Read authorised information and metadata without writing to the source.</div>
+            </div>
+            <div class="tag">Permitted · scoped</div>
+          </article>
+          <article class="cap allowed reveal">
+            <div>
+              <div class="cap-code">C1</div>
+              <div class="cap-name">ANALYSE</div>
+              <div class="cap-copy">Calculate, classify, contrast, detect anomalies and formulate evidence-bounded claims.</div>
+            </div>
+            <div class="tag">Permitted · scoped</div>
+          </article>
+          <article class="cap allowed reveal">
+            <div>
+              <div class="cap-code">C2</div>
+              <div class="cap-name">RECOMMEND</div>
+              <div class="cap-copy">Produce a non-executable proposal for human consideration, with evidence and limits.</div>
+            </div>
+            <div class="tag">Maximum authority</div>
+          </article>
+          <article class="cap prohibited reveal">
+            <div>
+              <div class="cap-code">C3</div>
+              <div class="cap-name">PREPARE / ISSUE</div>
+              <div class="cap-copy">Create an order, setpoint, configuration, schedule or artefact ready to apply.</div>
+            </div>
+            <div class="tag">Prohibited</div>
+          </article>
+          <article class="cap prohibited reveal">
+            <div>
+              <div class="cap-code">C4</div>
+              <div class="cap-name">EXECUTE / CONTROL</div>
+              <div class="cap-copy">Act on equipment, processes, safety, signalling, energy or physical functions.</div>
+            </div>
+            <div class="tag">Prohibited</div>
+          </article>
+        </div>
+
+        <div class="note">
+          Within the tested object, C3/C4 attempts may be retained only as denied negative evidence.
+          This is a bounded claim about the evaluated baseline — not a guarantee that every future implementation is incapable of modification or compromise.
+        </div>
+      </div>
+    </section>
+
+    <section id="evidence">
+      <div class="wrap">
+        <div class="section-kicker">Evidence by design</div>
+        <h2>From AI output to a reconstructible decision trajectory.</h2>
+        <p class="section-intro">
+          Evidence is treated as part of the workflow rather than an after-the-fact report. The goal is to preserve enough structured information
+          to reconstruct purpose, sources, policy, recommendation, human intervention, outcome and integrity — without placing sensitive raw content
+          into general evidence records.
+        </p>
+
+        <div class="flow" aria-label="Evidence trajectory">
+          <div class="flow-node">Purpose</div><div class="flow-arrow">→</div>
+          <div class="flow-node">Sources & context</div><div class="flow-arrow">→</div>
+          <div class="flow-node">Analysis & claims</div><div class="flow-arrow">→</div>
+          <div class="flow-node">Recommendation</div>
+        </div>
+        <div class="flow" style="margin-top:10px" aria-label="Human decision and outcome trajectory">
+          <div class="flow-node">Human decision</div><div class="flow-arrow">→</div>
+          <div class="flow-node">Outcome</div><div class="flow-arrow">→</div>
+          <div class="flow-node">Integrity & replay</div><div class="flow-arrow">→</div>
+          <div class="flow-node">Controlled review</div>
+        </div>
+
+        <div class="metrics grid grid-4">
+          <article class="card metric-card reveal">
+            <div class="num">8</div>
+            <div class="metric-label">Versioned evidence contracts</div>
+            <div class="metric-copy">run manifest, agent, source, claim, action, interpretability, human decision and outcome records.</div>
+          </article>
+          <article class="card metric-card reveal">
+            <div class="num">10,000</div>
+            <div class="metric-label">Virtual synthetic cases</div>
+            <div class="metric-copy">Deterministic Assurance Lab campaign. This is not equivalent to prolonged real operation.</div>
+          </article>
+          <article class="card metric-card reveal">
+            <div class="num">113 / 113</div>
+            <div class="metric-label">Accumulated internal tests</div>
+            <div class="metric-copy">Additive internal regression within the recorded object, fixtures, version and environment.</div>
+          </article>
+          <article class="card metric-card reveal">
+            <div class="num">C2</div>
+            <div class="metric-label">Maximum authorised capability</div>
+            <div class="metric-copy">C3/C4 remain prohibited in the current baseline.</div>
+          </article>
+        </div>
+
+        <div class="disclaimer">
+          These figures describe internal verification of the recorded baseline. They do not constitute external validation, industrial validation,
+          certification, regulatory conformity or proof of production readiness. E08 (industrial continuity) and E10 (real human supervision)
+          remain <strong>INCONCLUSIVE</strong> and are not counted as PASS.
+        </div>
+
+        <div class="verification">
+          <h3>Verification snapshot</h3>
+          <p class="section-intro">The 113/113 figure is an additive internal regression result, not an external benchmark.</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Gate</th><th>Result</th><th>Status</th><th>Evaluated scope</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>G7.1 · Evidence Spine</strong></td><td>40 / 40</td><td class="result-internal">INTERNAL PASS</td><td>Defined object, version and environment.</td></tr>
+                <tr><td><strong>G7.2 · Agent Governance</strong></td><td>26 / 26</td><td class="result-internal">INTERNAL PASS</td><td>Synthetic identities, delegations and policies.</td></tr>
+                <tr><td><strong>G7.3 · Assurance Lab</strong></td><td>30 / 30</td><td class="result-internal">INTERNAL PASS</td><td>Virtual deterministic campaign.</td></tr>
+                <tr><td><strong>G7.4 · Baseline Closure</strong></td><td>17 / 17</td><td class="result-internal">INTERNAL PASS</td><td>Closure plus claim and authority guardrails.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="note">Earlier suites were retained unmodified. E08 and E10 remain INCONCLUSIVE and are not included as PASS.</div>
+        </div>
+
+        <div class="disclosure-grid grid grid-3">
+          <article class="card reveal">
+            <div class="level">D0 · PUBLIC</div>
+            <h3>Open project overview</h3>
+            <ul>
+              <li>Baseline status and capability boundary.</li>
+              <li>Internal verification summary.</li>
+              <li>Energy demonstrator, limitations and evaluation path.</li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <div class="level">D2 · CONTROLLED</div>
+            <h3>Scoped evaluator package</h3>
+            <ul>
+              <li>Source perimeter and installation guide.</li>
+              <li>Contracts, schemas, tests, manifests and checksums.</li>
+              <li>SBOM/AI-BOM and synthetic evidence packs.</li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <div class="level">EXCLUDED</div>
+            <h3>Not part of public disclosure</h3>
+            <ul>
+              <li>Real energy or installation data.</li>
+              <li>Credentials, endpoints or control details.</li>
+              <li>Detailed IP and transaction records.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="note">
+          The public repository is limited to approved public-disclosure material. Technical source and evaluation artefacts are provided only
+          through a scoped controlled-review process with explicit authorisation and appropriate confidentiality terms.
+        </div>
+      </div>
+    </section>
+
+    <section id="energy">
+      <div class="wrap">
+        <div class="section-kicker">Applied evidence path</div>
+        <h2>Frozen V2.0 Energy Advisory demonstrator.</h2>
+        <p class="section-intro">
+          Energy is the only current domain with project-specific applied evidence. The demonstrator is local, read-only and consultative.
+          V2.1 does not replace it; it adds generalised evidence, governance and synthetic assurance components.
+        </p>
+
+        <div class="energy">
+          <div class="energy-visual reveal">
+            <div class="small">ENERGY ADVISORY · LOCAL / READ-ONLY</div>
+            <div class="big-claim">Analyse historical telemetry.<br>Recommend to a human.<br>Do not control assets.</div>
+            <div class="small">Private real-energy data remains outside the public website and general disclosure package.</div>
+          </div>
+
+          <div class="card reveal">
+            <h3>What the demonstrator supports</h3>
+            <div class="checks">
+              <div class="check"><span class="checkmark">✓</span><span><b>Local analysis</b> of historical energy telemetry.</span></div>
+              <div class="check"><span class="checkmark">✓</span><span><b>Read-only advisory signals</b> and recommendations.</span></div>
+              <div class="check"><span class="checkmark">✓</span><span><b>Structured evidence</b> linking input, context and output.</span></div>
+              <div class="check"><span class="checkmark">✓</span><span><b>Human review</b> as the decision boundary.</span></div>
+              <div class="check"><span class="checkmark">✓</span><span><b>Reproducible local execution</b> and synthetic data generation.</span></div>
+            </div>
+
+            <h3 style="margin-top:24px">What it does not claim</h3>
+            <div class="checks">
+              <div class="check"><span class="xmark">×</span><span>No inverter, battery, protection, grid or load control.</span></div>
+              <div class="check"><span class="xmark">×</span><span>No industrial continuity, functional safety or production-readiness claim.</span></div>
+              <div class="check"><span class="xmark">×</span><span>No proven savings, forecasting accuracy or emissions reduction claim.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="evaluation">
+      <div class="wrap">
+        <div class="section-kicker">Controlled evaluation</div>
+        <h2>A technical asset that can be examined — not a promise that must be believed.</h2>
+        <p class="section-intro">
+          The preferred transfer path is progressive: public understanding first, then scoped technical review,
+          synthetic clean-room evaluation and only later — when justified and authorised — deeper confidential evidence.
+        </p>
+
+        <div class="steps">
+          <article class="step reveal"><h3>Public overview</h3><p>Problem, architecture, capability boundary and explicit limitations.</p></article>
+          <article class="step reveal"><h3>Scoped review</h3><p>Agree purpose, evaluator, disclosure level, acceptance questions and constraints.</p></article>
+          <article class="step reveal"><h3>Synthetic evaluation</h3><p>Independent installation, tests, deterministic evidence generation, integrity and replay checks.</p></article>
+          <article class="step reveal"><h3>Confidential review</h3><p>Additional evidence under explicit authorisation, confidentiality, access, retention and deletion terms.</p></article>
+          <article class="step reveal"><h3>Evaluator data</h3><p>A future step requiring authorised third-party data, threat model, role model and new acceptance criteria.</p></article>
+        </div>
+
+        <div class="note">Portability to a third party's real environment has not yet been demonstrated.</div>
+
+        <div class="grid grid-4" style="margin-top:32px">
+          <article class="card reveal"><h3>Technical evaluation</h3><p>Controlled inspection and independent reproduction of the defined baseline.</p></article>
+          <article class="card reveal"><h3>Integration assessment</h3><p>Evaluation against an authorised third-party architecture, data perimeter and responsibility model.</p></article>
+          <article class="card reveal"><h3>Licence</h3><p>A negotiated right to use defined assets under written terms and appropriate review.</p></article>
+          <article class="card reveal"><h3>Asset acquisition</h3><p>Transfer of an agreed asset perimeter, subject to technical, legal, tax and IP due diligence.</p></article>
+        </div>
+
+        <div class="regulatory reveal">
+          <h3>Potential regulatory relevance — not conformity</h3>
+          <p>
+            The implemented mechanisms may support a future applicability and gap assessment concerning risk management, data governance,
+            record-keeping, transparency, human oversight, robustness and cybersecurity. Applicability, classification and obligations depend
+            on intended purpose, actor role and deployment context, and require competent external legal and sectoral assessment.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="limits">
+      <div class="wrap">
+        <div class="section-kicker">Claim hygiene</div>
+        <h2>Explicit limitations are part of the asset.</h2>
+        <p class="section-intro">
+          Internal evidence is not elevated by wording. The current baseline is intentionally described with a short benchmark-to-claim distance.
+        </p>
+
+        <div class="limits">
+          <div class="limit-list">
+            <div class="limit-item"><strong>No regulatory conformity or certification claim.</strong></div>
+            <div class="limit-item"><strong>No production-readiness or industrial-validation claim.</strong></div>
+            <div class="limit-item"><strong>No absolute-security, complete-threat-coverage or functional-safety claim.</strong></div>
+            <div class="limit-item"><strong>No proven cost, energy, emissions, forecasting or anomaly-detection benefit.</strong></div>
+            <div class="limit-item"><strong>No autonomous operational-control claim.</strong></div>
+            <div class="limit-item"><strong>No validated applicability to railway or other safety-critical sectors.</strong></div>
+          </div>
+          <div class="limit-list">
+            <div class="limit-item inconclusive"><strong>E08 · INCONCLUSIVE.</strong> Industrial continuity has not been demonstrated.</div>
+            <div class="limit-item inconclusive"><strong>E10 · INCONCLUSIVE.</strong> Fixtures do not validate real human supervision.</div>
+            <div class="limit-item"><strong>No freedom-to-operate or patentability opinion.</strong></div>
+            <div class="limit-item"><strong>No endorsement, approval or interest claimed from any named company or public body.</strong></div>
+            <div class="limit-item"><strong>No real connectors, production credentials or operational control in V2.1.</strong></div>
+            <div class="limit-item"><strong>Any new sector or operational use requires a new scope, authorised data, testing and human decision.</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <div class="section-kicker">Evaluator FAQ</div>
+        <h2>Questions to resolve before a controlled review.</h2>
+        <div class="faq">
+          <details>
+            <summary>Is TruncAI-OTiX a SaaS product?</summary>
+            <p>No. It is a privately owned technical asset offered for controlled evaluation and possible integration, licence or acquisition discussions. It is not a production service.</p>
+          </details>
+          <details>
+            <summary>Can the current baseline control operational assets?</summary>
+            <p>No. Current authority is capped at C2 recommendation. C3 preparation or issue and C4 execution or control are prohibited.</p>
+          </details>
+          <details>
+            <summary>Why is the technical source not public?</summary>
+            <p>The website and approved overview are D0 public. Source, tests and evaluation artefacts are D2 controlled; private data, credentials and operational details remain excluded.</p>
+          </details>
+          <details>
+            <summary>What can an approved evaluator inspect?</summary>
+            <p>The agreed scope may include the source perimeter, installation guide, contracts and schemas, test suites, manifests and checksums, SBOM/AI-BOM, synthetic demonstration and evidence packs, and the limitations register.</p>
+          </details>
+          <details>
+            <summary>Does the project claim EU AI Act conformity?</summary>
+            <p>No. The mechanisms may be relevant to a future applicability and gap assessment, but no regulatory conformity or certification is claimed.</p>
+          </details>
+          <details>
+            <summary>What remains unverified?</summary>
+            <p>Independent cold execution, external review, portability with evaluator data, real human oversight, industrial continuity and sector-specific validation remain pending or inconclusive.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact reveal">
+          <div>
+            <div class="section-kicker">Contact</div>
+            <h2>Evaluate the evidence.<br>Understand the limits.<br>Decide from there.</h2>
+            <p>
+              TruncAI-OTiX is a privately owned, founder-led technology project developed with AI assistance.
+              For a technical evaluation, transfer discussion or controlled disclosure, use the project contact address.
+            </p>
+            <a class="btn btn-primary" href="mailto:contact@truncaiotix.com?subject=TruncAI-OTiX%20controlled%20evaluation&amp;body=Organisation%3A%0ARole%3A%0AEvaluation%20purpose%3A%0AKey%20questions%3A%0ARequested%20scope%3A">Contact TruncAI-OTiX</a>
+          </div>
+          <div class="contact-side">
+            <div class="small">PROJECT CONTACT</div>
+            <div class="contact-email"><a href="mailto:contact@truncaiotix.com">contact@truncaiotix.com</a></div>
+            <div class="small" style="margin-top:10px">truncaiotix.com</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div class="footer-copy">
+        <strong>TruncAI-OTiX · Internal transferable baseline with limitations.</strong><br>
+        Information on this website is provided for technical evaluation and controlled-transfer discussions.
+        It does not constitute certification, regulatory conformity, a warranty of performance or legal advice.
+      </div>
+      <div>© 2026 TruncAI-OTiX</div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation.
+    const menuBtn = document.getElementById('menuBtn');
+    const navlinks = document.getElementById('navlinks');
+    menuBtn.addEventListener('click', () => {
+      const open = navlinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+    navlinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navlinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded','false');
+    }));
+
+    // Progressive reveal.
+    const io = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }});
+    }, {threshold:.08}) : null;
+    document.querySelectorAll('.reveal').forEach(el => io ? io.observe(el) : el.classList.add('visible'));
+
+    // Exact truncated-octahedron wireframe:
+    // 24 vertices = all unique permutations of (0, ±1, ±2)
+    // 36 edges = vertex pairs at squared Euclidean distance 2.
+    const canvas = document.getElementById('otCanvas');
+    const ctx = canvas.getContext('2d');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function permutations(a){
+      const out = [];
+      function p(arr, rest){
+        if(!rest.length){ out.push(arr); return; }
+        for(let i=0;i<rest.length;i++) p(arr.concat(rest[i]), rest.slice(0,i).concat(rest.slice(i+1)));
+      }
+      p([], a);
+      return out;
+    }
+    const unique = new Map();
+    permutations([0,1,2]).forEach(q => {
+      [-1,1].forEach(sx => [-1,1].forEach(sy => [-1,1].forEach(sz => {
+        const v=[q[0]*sx,q[1]*sy,q[2]*sz];
+        unique.set(v.join(','),v);
+      })));
+    });
+    const V = [...unique.values()];
+    const E = [];
+    for(let i=0;i<V.length;i++){
+      for(let j=i+1;j<V.length;j++){
+        const d2=(V[i][0]-V[j][0])**2+(V[i][1]-V[j][1])**2+(V[i][2]-V[j][2])**2;
+        if(d2===2) E.push([i,j]);
+      }
+    }
+
+    function resize(){
+      const dpr=Math.min(window.devicePixelRatio||1,2);
+      const r=canvas.getBoundingClientRect();
+      canvas.width=Math.max(1,Math.round(r.width*dpr));
+      canvas.height=Math.max(1,Math.round(r.height*dpr));
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+    }
+    window.addEventListener('resize',resize,{passive:true});
+    resize();
+
+    function rot(v, ax, ay){
+      let [x,y,z]=v;
+      const cy=Math.cos(ay), sy=Math.sin(ay);
+      let x1=x*cy+z*sy, z1=-x*sy+z*cy;
+      const cx=Math.cos(ax), sx=Math.sin(ax);
+      let y1=y*cx-z1*sx, z2=y*sx+z1*cx;
+      return [x1,y1,z2];
+    }
+
+    function draw(t){
+      const r=canvas.getBoundingClientRect(), w=r.width, h=r.height;
+      ctx.clearRect(0,0,w,h);
+      const time=reduceMotion?0.65:t*0.00018;
+      const pts=V.map(v => {
+        const q=rot(v,0.54,time);
+        const perspective=5.9/(5.9-q[2]*0.35);
+        const scale=Math.min(w,h)*0.118*perspective;
+        return [w*.5+q[0]*scale,h*.44+q[1]*scale,q[2]];
+      });
+
+      E.forEach(([a,b])=>{
+        const p=pts[a], q=pts[b];
+        const depth=(p[2]+q[2])/2;
+        const alpha=0.22+(depth+2.6)/5.2*0.55;
+        const grad=ctx.createLinearGradient(p[0],p[1],q[0],q[1]);
+        grad.addColorStop(0,`rgba(100,227,212,${Math.max(.16,alpha)})`);
+        grad.addColorStop(1,`rgba(120,168,255,${Math.max(.14,alpha*.84)})`);
+        ctx.strokeStyle=grad;
+        ctx.lineWidth=1.2+(depth+3)*.10;
+        ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(q[0],q[1]);ctx.stroke();
+      });
+
+      pts.forEach(p=>{
+        const alpha=0.45+(p[2]+2.7)/5.4*.45;
+        ctx.fillStyle=`rgba(236,250,255,${alpha})`;
+        ctx.beginPath();ctx.arc(p[0],p[1],2.0+(p[2]+3)*.16,0,Math.PI*2);ctx.fill();
+      });
+
+      if(!reduceMotion) requestAnimationFrame(draw);
+    }
+    requestAnimationFrame(draw);
+  </script>
+</body>
+</html>

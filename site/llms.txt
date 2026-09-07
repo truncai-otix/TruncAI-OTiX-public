@@ -1,0 +1,59 @@
+# TruncAI-OTiX
+
+> Public D0 overview of an internally executable, local, synthetic and non-operational technical reference for bounded, human-reviewed AI decision support, traceability and controlled technical evaluation.
+
+Canonical website: https://truncaiotix.com/
+Language: English
+Contact: contact@truncaiotix.com
+
+## Public access
+
+- The canonical website and this summary are public D0 material.
+- They require no authentication, cookies or client-side JavaScript to retrieve their textual content.
+- Automated readers are allowed by robots.txt.
+- Technical source and evaluation artefacts are not public; approved evaluators may receive a scoped D2 package under explicit authorisation and appropriate confidentiality terms.
+
+## Current baseline
+
+- Version: V2.1.
+- Status: internally executable transferable baseline with explicit limitations.
+- Environment: local, synthetic and non-operational.
+- Maximum authorised capability: C2 RECOMMEND.
+- Prohibited capabilities: C3 PREPARE / ISSUE and C4 EXECUTE / CONTROL.
+- Human ownership and review remain mandatory.
+
+## Evidence components
+
+- Evidence Spine: versioned contracts, deterministic canonicalisation, SHA-256 records, linked append-only events, replay, manifests and integrity checks.
+- Agent Governance: identity, human ownership, minimum-privilege delegation, purpose and tool binding, validity, budgets, revocation and HITL escalation.
+- Assurance Lab: deterministic synthetic evaluation campaigns, negative testing, tamper detection and replay.
+- Baseline Closure: machine-readable closure and fail-closed checks against silent expansion of authority, validation scope or claims.
+
+## Internal verification snapshot
+
+- G7.1 Evidence Spine: 40/40 INTERNAL PASS.
+- G7.2 Agent Governance: 26/26 INTERNAL PASS.
+- G7.3 Assurance Lab: 30/30 INTERNAL PASS.
+- G7.4 Baseline Closure: 17/17 INTERNAL PASS.
+- Additive total: 113/113 internal tests for the recorded object, fixtures, version and environment.
+- E08 industrial continuity: INCONCLUSIVE and not counted as PASS.
+- E10 real human supervision: INCONCLUSIVE and not counted as PASS.
+
+## Applied evidence path
+
+- The frozen V2.0 Energy Advisory demonstrator is the only current domain with project-specific applied evidence.
+- It analyses historical telemetry locally and provides read-only recommendations for human review.
+- It does not control inverters, batteries, protection, grid, loads or other operational assets.
+- Private real-energy data is excluded from public disclosure.
+
+## Claim boundary
+
+- No external or industrial validation is claimed.
+- No certification, regulatory conformity or production readiness is claimed.
+- No absolute security, complete threat coverage or functional safety is claimed.
+- No proven cost, energy, emissions, forecasting or anomaly-detection benefit is claimed.
+- Potential regulatory relevance depends on intended purpose, classification, actor role and deployment context and requires competent external legal and sectoral assessment.
+
+## Evaluation
+
+The progressive path is public overview, scoped review, synthetic clean-room evaluation, confidential review and—only when justified and authorised—evaluation with third-party data. Portability to a third party's real environment has not yet been demonstrated.
