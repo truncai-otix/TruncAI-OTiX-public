@@ -8,6 +8,19 @@ Official public repository: https://github.com/truncai-otix/TruncAI-OTiX-public
 
 This is the project's public D0 disclosure repository. It provides a versioned website snapshot and publication traceability; it does not publish the controlled technical source or represent external validation.
 
+## Canonical public pages
+
+- Project overview: https://truncaiotix.com/what-is-truncai-otix/
+- Evidence: https://truncaiotix.com/evidence/
+- Architecture: https://truncaiotix.com/architecture/
+- Capability boundary: https://truncaiotix.com/capability-boundary/
+- Evaluation: https://truncaiotix.com/evaluation/
+- FAQ: https://truncaiotix.com/faq/
+- Machine-readable overview: https://truncaiotix.com/llms.txt
+- Sitemap: https://truncaiotix.com/sitemap.xml
+
+These canonical links point to approved D0 pages. They do not imply that a search engine has indexed the pages or that an AI product will retrieve or cite them.
+
 ## Project status
 
 TruncAI-OTiX V2.1 is an internally executable technical baseline designed for governable human-in-the-loop AI decision support.
