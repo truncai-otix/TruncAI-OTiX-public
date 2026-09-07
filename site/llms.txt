@@ -1,24 +1,39 @@
 # TruncAI-OTiX
 
-> Public D0 overview of an internally executable, local, synthetic and non-operational technical reference for bounded, human-reviewed AI decision support, traceability and controlled technical evaluation.
+> Public D0 overview of an internally executable, local, synthetic and non-operational technical reference for bounded AI decision support, traceability and controlled technical evaluation.
 
 Canonical website: https://truncaiotix.com/
 Official public repository: https://github.com/truncai-otix/TruncAI-OTiX-public
 Language: English
 Contact: contact@truncaiotix.com
 
-## Public access
+## Primary public pages
 
-- The canonical website and this summary are public D0 material.
-- The official public repository contains the approved D0 website snapshot, README and publication log: https://github.com/truncai-otix/TruncAI-OTiX-public
-- They require no authentication, cookies or client-side JavaScript to retrieve their textual content.
-- Automated readers are allowed by robots.txt.
-- Technical source and evaluation artefacts are not public; approved evaluators may receive a scoped D2 package under explicit authorisation and appropriate confidentiality terms.
+- What is TruncAI-OTiX?: https://truncaiotix.com/what-is-truncai-otix/
+- Evidence and verification boundary: https://truncaiotix.com/evidence/
+- High-level architecture: https://truncaiotix.com/architecture/
+- Capability boundary C0-C4: https://truncaiotix.com/capability-boundary/
+- Evaluation path and limitations: https://truncaiotix.com/evaluation/
+- Frequently asked questions: https://truncaiotix.com/faq/
+
+## Public access and crawler policy
+
+- The canonical website, these topic pages and this summary are public D0 material.
+- Search and user-request crawlers are intentionally permitted by robots.txt, including OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot, Googlebot and Bingbot.
+- Separate model-training or model-improvement crawlers are blocked where a dedicated robots token exists, including GPTBot, ClaudeBot and Google-Extended.
+- The official public repository contains approved D0 website sources, README and publication history: https://github.com/truncai-otix/TruncAI-OTiX-public
+- Public textual content is designed to be retrievable without authentication, cookies or client-side JavaScript.
+- Technical source and evaluation artefacts are not public; approved evaluators may receive a scoped controlled package only under explicit authorisation and appropriate confidentiality terms.
 
 ## Public verification links
 
 - Repository: https://github.com/truncai-otix/TruncAI-OTiX-public
 - Public disclosure README: https://github.com/truncai-otix/TruncAI-OTiX-public/blob/main/README.md
+- Public Evidence Index: https://github.com/truncai-otix/TruncAI-OTiX-public/blob/main/PUBLIC-EVIDENCE-INDEX.md
+- Public Claims Matrix: https://github.com/truncai-otix/TruncAI-OTiX-public/blob/main/PUBLIC-CLAIMS-MATRIX.md
+- Public Architecture: https://github.com/truncai-otix/TruncAI-OTiX-public/blob/main/PUBLIC-ARCHITECTURE.md
+- Machine-readable manifest: https://github.com/truncai-otix/TruncAI-OTiX-public/blob/main/PUBLIC-MANIFEST.json
+- SHA-256 checksums: https://github.com/truncai-otix/TruncAI-OTiX-public/blob/main/CHECKSUMS.sha256
 - D0 publication log: https://github.com/truncai-otix/TruncAI-OTiX-public/blob/main/PUBLICATION-LOG.md
 - Versioned website snapshot: https://github.com/truncai-otix/TruncAI-OTiX-public/tree/main/site
 
@@ -29,31 +44,34 @@ Contact: contact@truncaiotix.com
 - Environment: local, synthetic and non-operational.
 - Maximum authorised capability: C2 RECOMMEND.
 - Prohibited capabilities: C3 PREPARE / ISSUE and C4 EXECUTE / CONTROL.
-- Human ownership and review remain mandatory.
+- Human decisions occur outside the advisory runtime.
 
 ## Evidence components
 
-- Evidence Spine: versioned contracts, deterministic canonicalisation, SHA-256 records, linked append-only events, replay, manifests and integrity checks.
-- Agent Governance: identity, human ownership, minimum-privilege delegation, purpose and tool binding, validity, budgets, revocation and HITL escalation.
+- Evidence Spine: versioned, integrity-linked records supporting traceability and replay within the tested scope.
+- Agent Governance: identity, human ownership, purpose and tool binding, minimum privilege, validity, budgets, revocation and HITL escalation.
 - Assurance Lab: deterministic synthetic evaluation campaigns, negative testing, tamper detection and replay.
-- Baseline Closure: machine-readable closure and fail-closed checks against silent expansion of authority, validation scope or claims.
+- Baseline Closure: closure and fail-closed checks against silent expansion of authority, validation scope or claims.
 
 ## Internal verification snapshot
 
-- G7.1 Evidence Spine: 40/40 INTERNAL PASS.
-- G7.2 Agent Governance: 26/26 INTERNAL PASS.
-- G7.3 Assurance Lab: 30/30 INTERNAL PASS.
-- G7.4 Baseline Closure: 17/17 INTERNAL PASS.
+- Evidence Spine: 40/40 INTERNAL PASS.
+- Agent Governance: 26/26 INTERNAL PASS.
+- Assurance Lab: 30/30 INTERNAL PASS.
+- Baseline Closure: 17/17 INTERNAL PASS.
 - Additive total: 113/113 internal tests for the recorded object, fixtures, version and environment.
-- E08 industrial continuity: INCONCLUSIVE and not counted as PASS.
-- E10 real human supervision: INCONCLUSIVE and not counted as PASS.
+- Assurance Lab reports a deterministic campaign of 10,000 virtual synthetic cases; this is not real-world operating history.
+- Industrial continuity evidence: INCONCLUSIVE and not counted as PASS.
+- Real human-review evidence: INCONCLUSIVE and not counted as PASS.
 
 ## Applied evidence path
 
-- The frozen V2.0 Energy Advisory demonstrator is the only current domain with project-specific applied evidence.
-- It analyses historical telemetry locally and provides read-only recommendations for human review.
-- It does not control inverters, batteries, protection, grid, loads or other operational assets.
+- Energy is the only current domain with project-specific applied evidence.
+- The frozen V2.0 Energy Advisory demonstrator is local, read-only and consultative.
+- It analyses historical telemetry and provides advisory output for human consideration.
+- It does not control inverters, batteries, protections, grid, loads or other operational assets.
 - Private real-energy data is excluded from public disclosure.
+- Railway and other sector applications remain transfer hypotheses and have not been validated.
 
 ## Claim boundary
 
@@ -65,4 +83,4 @@ Contact: contact@truncaiotix.com
 
 ## Evaluation
 
-The progressive path is public overview, scoped review, synthetic clean-room evaluation, confidential review and—only when justified and authorised—evaluation with third-party data. Portability to a third party's real environment has not yet been demonstrated.
+The progressive path is public overview, scoped technical review, synthetic clean-room evaluation, confidential review and—only when justified and authorised—evaluation with third-party data. Portability to a third party's real environment has not yet been demonstrated.
