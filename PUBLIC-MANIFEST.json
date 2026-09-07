@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "capsule_id": "truncai-otix-v2.1-d0-evidence",
+  "status": "published",
+  "publication_authorized": true,
+  "publication_date": "2026-09-07",
+  "release_id": "V2.1-D0.1",
+  "disclosure_level": "D0",
+  "baseline_version": "2.1",
+  "public_base_commit": "e53487d276e0e56a1288a6af85a397450a494cf6",
+  "scope": {
+    "environment": [
+      "local",
+      "synthetic",
+      "non-operational"
+    ],
+    "maximum_authority": "C2",
+    "prohibited_authority": [
+      "C3",
+      "C4"
+    ]
+  },
+  "components": [
+    "Evidence Spine",
+    "Agent Governance",
+    "Assurance Lab",
+    "Baseline Closure"
+  ],
+  "internal_test_summary": {
+    "evidence_spine": {
+      "passed": 40,
+      "total": 40
+    },
+    "agent_governance": {
+      "passed": 26,
+      "total": 26
+    },
+    "assurance_lab": {
+      "passed": 30,
+      "total": 30
+    },
+    "baseline_closure": {
+      "passed": 17,
+      "total": 17
+    },
+    "aggregate": {
+      "passed": 113,
+      "total": 113
+    },
+    "qualification": "Internal, synthetic and limited to the evaluated V2.1 object, fixtures and environment; not independently reproduced or externally validated."
+  },
+  "virtual_case_campaign": {
+    "cases": 10000,
+    "qualification": "Deterministic synthetic campaign; not real-world operating history or prolonged-operation evidence."
+  },
+  "inconclusive_evidence": [
+    "continuity",
+    "real_human_review"
+  ],
+  "artifacts": [
+    {
+      "path": "PUBLIC-EVIDENCE-INDEX.md",
+      "role": "Evidence map and disclosure boundary"
+    },
+    {
+      "path": "PUBLIC-CLAIMS-MATRIX.md",
+      "role": "Controlled public claims and prohibited wording"
+    },
+    {
+      "path": "PUBLIC-ARCHITECTURE.md",
+      "role": "High-level architecture and authority boundary"
+    },
+    {
+      "path": "PUBLIC-MANIFEST.json",
+      "role": "Machine-readable capsule summary"
+    }
+  ],
+  "integrity": {
+    "algorithm": "SHA-256",
+    "file": "CHECKSUMS.sha256",
+    "note": "The checksum file covers the four listed artifacts and intentionally does not hash itself."
+  },
+  "excluded_from_d0": [
+    "source_code",
+    "executable_packages",
+    "exact_schemas_and_algorithms",
+    "test_fixtures_and_detailed_procedures",
+    "datasets_and_representative_records",
+    "operational_interfaces",
+    "dependency_inventory_and_controlled_sbom",
+    "credentials_and_security_configuration",
+    "threat_model_details",
+    "prompts_and_internal_workflows",
+    "valuation_transaction_and_ip_strategy_material",
+    "personal_or_future_legal_entity_identity"
+  ],
+  "non_claims": [
+    "production_ready",
+    "externally_validated",
+    "industrially_validated",
+    "independently_audited",
+    "certified",
+    "regulatory_conformity",
+    "secure_against_all_threats",
+    "continuity_demonstrated",
+    "real_human_supervision_validated",
+    "operational_performance_or_savings"
+  ]
+}

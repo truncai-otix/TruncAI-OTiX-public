@@ -2,6 +2,22 @@
 
 This log records authorised public-content maintenance for TruncAI-OTiX. It contains no private data, credentials, operational endpoints, Worker runtime code or security configuration.
 
+## 2026-09-07 — V2.1 D0 public evidence capsule
+
+- **Authority:** explicit owner approval under C3-PUB-D0 and Prompt Maestro TruncAI-OTiX V2.2.
+- **Purpose:** provide a public evidence index, controlled claims matrix, high-level architecture, machine-readable manifest and deterministic integrity record without exposing D2 technical material.
+- **Release:** `V2.1-D0.1`.
+- **Scope:** `PUBLIC-EVIDENCE-INDEX.md`, `PUBLIC-CLAIMS-MATRIX.md`, `PUBLIC-ARCHITECTURE.md`, `PUBLIC-MANIFEST.json`, `CHECKSUMS.sha256`, README discoverability and this publication record.
+- **Disclosure exclusions:** personal or legal-entity identity, source code, exact schemas, algorithms, fixtures, datasets, detailed tests, SBOM, prompts, security internals, credentials, IP strategy, valuation and transaction material.
+- **DNS, WAF, security, credentials, access and authentication change:** none.
+
+### Evidence boundary
+
+- The public repository can demonstrate D0 provenance, claim consistency, publication history and file integrity.
+- The 113/113 regression and 10,000 virtual-case campaign remain internally evidenced, synthetic and not independently reproducible from D0.
+- E08 continuity and E10 real human-review evidence remain INCONCLUSIVE and are not counted as PASS.
+- No production readiness, external or industrial validation, certification, regulatory conformity or absolute-security claim is made.
+
 ## 2026-09-07 — Official public repository discoverability
 
 - **Authority:** C3-PUB-D0 under Prompt Maestro TruncAI-OTiX V2.2.
@@ -24,9 +40,9 @@ This log records authorised public-content maintenance for TruncAI-OTiX. It cont
 - The HTML declares the relationship through `rel="me"` and Schema.org `sameAs`; the HTTP `Link` response header also exposes the repository relationship.
 - `llms.txt` includes direct links to the repository, README, publication log and versioned website snapshot.
 - The repository README links back to the canonical website and states that the repository is D0 public disclosure, not the controlled technical source or external validation.
-- Browser, Claude, OpenAI, Bing/Copilot and Perplexity user-agent checks returned the same HTML bytes and SHA-256 value.
+- HTTP requests using browser, Claude, OpenAI, Bing/Copilot and Perplexity user-agent strings returned the same HTML bytes and SHA-256 value; user-agent simulation does not prove retrieval through those products' internal web tools.
 - `HEAD` returned 200 without a response body, an unknown path returned 404, and `www` resolved to the canonical apex URL.
-- **Evidence limitation:** public search-engine indexing is not immediate and remains outside direct project control. The public repository does not independently reproduce the 113/113 internal test claim because technical source and evaluation artefacts remain D2 controlled.
+- **Evidence limitation:** public search-engine indexing and product-specific retrieval remain outside direct project control. A Copilot internal web-retrieval attempt also failed for GitHub Raw, so it did not isolate a truncaiotix.com server fault. The public repository does not independently reproduce the 113/113 internal test claim because technical source and evaluation artefacts remain D2 controlled.
 
 ## 2026-09-07 — Public website snapshot versioning
 

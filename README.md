@@ -51,6 +51,18 @@ These results apply only to the recorded object, fixtures, version and environme
 
 INCONCLUSIVE is not treated as PASS.
 
+## Public evidence capsule
+
+The approved V2.1 D0 evidence capsule provides a public claim map, a deliberately high-level architecture view and machine-verifiable publication integrity:
+
+- [Public Evidence Index](PUBLIC-EVIDENCE-INDEX.md);
+- [Public Claims Matrix](PUBLIC-CLAIMS-MATRIX.md);
+- [Public Architecture](PUBLIC-ARCHITECTURE.md);
+- [Machine-readable Manifest](PUBLIC-MANIFEST.json);
+- [SHA-256 Checksums](CHECKSUMS.sha256).
+
+The capsule distinguishes publicly verifiable publication evidence from internally reported results. It does not expose the controlled technical source or make the internal tests independently reproducible.
+
 ## Applied evidence
 
 Energy is the only current domain with project-specific applied evidence.
