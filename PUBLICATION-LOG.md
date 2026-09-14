@@ -2,6 +2,19 @@
 
 This log records authorised public-content maintenance for TruncAI-OTiX. It contains no private data, credentials, operational endpoints, provider-internal deployment/version identifiers, Worker runtime code or security configuration.
 
+
+## 2026-09-14 — D0 homepage internal discovery links
+
+- **Authority:** standing C3-PUB-D0 maintenance authorization.
+- **Purpose:** remove the homepage internal-link discovery gap without changing claims or disclosure.
+- **Source change:** public pull request 1; `site/index.html` adds plain footer links to the six existing thematic D0 pages.
+- **Live validation:** seven canonical HTML pages return HTTP 200, are indexable, self-canonical and expose structured data; the homepage now exposes six internal links and the prior medium-severity no-internal-links finding is cleared.
+- **Machine-readable discovery:** the existing XML sitemap still exposes seven canonical URLs; `robots.txt` and `llms.txt` remain HTTP 200 and unchanged.
+- **Search observation:** Google still reports the homepage indexed and the six thematic URLs as unknown immediately after this maintenance. The sitemap-report configuration still contains six HTML pages submitted incorrectly as sitemaps; this public-content change does not alter Search Console configuration.
+- **Claim/disclosure boundary:** unchanged — the published 113/113 figure remains the historical V2.1 baseline claim; later controlled AUD-360 increments are not promoted to a new public baseline. E08 and E10 remain INCONCLUSIVE.
+- **Infrastructure boundary:** no DNS, WAF, security, authentication, access, secret or credential change.
+- **Rollback:** the prior public source state and prior provider-managed deployment remain recoverable through their respective version histories; provider identifiers are retained only in controlled evidence.
+
 ## 2026-09-07 — D0.2 live deployment verification
 
 - **Authority:** C3-PUB-D0 under Prompt Maestro TruncAI-OTiX V2.2, plus explicit owner authorization for Cloudflare Crawler Hints / IndexNow.
