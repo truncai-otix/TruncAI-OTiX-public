@@ -4,7 +4,7 @@
 
 - **Authority:** standing C3-PUB-D0 maintenance authorization.
 - **Purpose:** close the residual low-risk discoverability findings identified in the 2026-09-14 weekly review without adding a material claim, expanding disclosure, changing legal identity or altering controlled Core material.
-- **Rollback source:** public repository `main` before this maintenance at `79ea4bcb4a91c5a1e404711f46a97e5bb6ea3f06`; the previously active provider-managed deployment remains available in provider version history.
+- **Rollback source:** public repository `main` before this maintenance at `79ea4bcb4a91c5a1e404711f46a97e5bb6ea3f06`; prior provider-managed deployments remain available in provider version history.
 
 ## Source change
 
@@ -18,7 +18,8 @@
 ## Live verification
 
 - The deployed D0 source for the four modified pages and `sitemap.xml` was re-read after publication and matches the corresponding Git blobs from the merge commit.
-- The pre-existing live homepage was preserved byte-for-byte during this deployment because a later provider-side homepage revision was observed after the previously documented source snapshot; this avoids silently overwriting an unreviewed live delta.
+- A later provider-side homepage revision was detected after the previously documented source snapshot. It differed from the canonical repository homepage only by one explicit favicon `<link>` element; the favicon asset itself was already present.
+- The unversioned homepage metadata delta was removed so the live homepage again matches the canonical repository blob `bf08ab17014028fe505b1c693836eb1a25c67946` exactly. The homepage remains 47,852 bytes and the favicon asset remains available.
 - All six thematic pages remain self-canonical and indexable. The four pages previously identified as short now contain substantially more bounded explanatory material while retaining the same V2.1 claim boundary.
 - Architecture title length is reduced to 49 visible characters.
 - `sitemap.xml` still contains exactly the seven canonical public URLs.
