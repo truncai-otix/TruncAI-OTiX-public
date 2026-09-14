@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TruncAI-OTiX Architecture — Evidence, Governance and Assurance</title>
+<title>TruncAI-OTiX Architecture — Evidence &amp; Governance</title>
 <meta name="description" content="High-level public architecture of TruncAI-OTiX V2.1: Evidence Spine, Agent Governance, Assurance Lab and Baseline Closure.">
 <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
 <link rel="canonical" href="https://truncaiotix.com/architecture/">
@@ -19,6 +19,9 @@
 <div class="flow">Context or synthetic input → Evidence Spine → Agent Governance → C0–C2 advisory output → Human decision outside runtime<br><br>Assurance Lab and Baseline Closure exercise and check the governed evidence path. C3–C4 are denied in the tested V2.1 object.</div>
 <h2>Four high-level components</h2>
 <div class="grid"><div class="card"><h3>Evidence Spine</h3><p>Maintains versioned, integrity-linked records supporting traceability and replay within the tested scope.</p></div><div class="card"><h3>Agent Governance</h3><p>Applies constraints around identity, human ownership, purpose, tools, privilege, validity, budget, revocation and escalation.</p></div><div class="card"><h3>Assurance Lab</h3><p>Exercises deterministic synthetic scenarios, including negative testing and a virtual-case campaign.</p></div><div class="card"><h3>Baseline Closure</h3><p>Checks that the declared baseline closes consistently and fails closed against silent authority or claim expansion.</p></div></div>
+<h2>How do the components relate?</h2>
+<p>The Evidence Spine preserves the records needed to inspect a trajectory, while Agent Governance constrains who or what may act, for which purpose and within which authority. Assurance Lab challenges the same bounded path with deterministic synthetic scenarios and negative cases. Baseline Closure then checks the declared state for consistency so that authority, validation scope or claims are not silently expanded.</p>
+<p>This relationship is deliberately advisory: context can be analysed and a C0–C2 output can be produced, but a human decision remains outside the runtime. The public architecture is also deliberately high level. It shows the evidence and governance pattern without publishing the controlled source, exact schemas, fixtures, detailed tests, security configuration or other material outside D0.</p>
 <h2>Authority boundary</h2>
 <p>V2.1 permits C0 observation, C1 analysis and C2 recommendation within the tested scope. C2 is the maximum permitted authority. C3 preparation/issuance and C4 execution/control are prohibited in the evaluated object.</p>
 <h2>Trust and operational boundary</h2>
